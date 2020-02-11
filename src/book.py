@@ -1,7 +1,8 @@
 import datetime
 from uuid import uuid4
 
-from BookCatalog.src.type import Type
+# from BookCatalog.src.type import Type
+from src.type import Type
 
 
 def generate_first_four_books():

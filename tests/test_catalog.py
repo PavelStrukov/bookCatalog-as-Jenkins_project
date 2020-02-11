@@ -5,7 +5,9 @@ import json
 
 import pytest
 
-from BookCatalog.src import *
+# from BookCatalog.src import *
+from src import catalog
+from src.book import generate_first_four_books
 
 
 # from BookCatalog.src.book import generate_first_four_books

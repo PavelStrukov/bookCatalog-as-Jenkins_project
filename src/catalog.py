@@ -3,7 +3,8 @@ import logging.config
 
 from flask import Flask, request, Response, jsonify
 
-from BookCatalog.src.book import Book, generate_first_four_books
+# from BookCatalog.src.book import Book, generate_first_four_books
+from src.book import Book, generate_first_four_books
 
 
 def is_valid_book_object(book_object):

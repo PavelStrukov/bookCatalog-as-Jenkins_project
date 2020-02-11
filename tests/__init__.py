@@ -1,1 +1,1 @@
-from BookCatalog.tests import *
+# from BookCatalog.tests import *
