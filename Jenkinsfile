@@ -8,13 +8,8 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh 'python3 tests/test_catalog.py'
+        sh 'pytest tests/test_catalog.py'
       }
-    post {
-       always {
-         junit 'tests/test-reports/*.xml'
-       }
-      }       
     }
   }
 }
