@@ -1,0 +1,1 @@
+from BookCatalog.tests import *
