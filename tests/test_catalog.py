@@ -187,11 +187,3 @@ def test_get_book_info_by_not_existing_id(client):
     response = client.get(url + book_id)
 
     assert response.status == "404 NOT FOUND"
-
-
-if __name__ == "__main__":
-    import xmlrunner
-
-    runner = xmlrunner.XMLTestRunner(output='test-reports')
-    pytest.main(runner)
-    pytest.main()
