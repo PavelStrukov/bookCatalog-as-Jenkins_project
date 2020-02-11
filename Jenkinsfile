@@ -1,5 +1,10 @@
 pipeline {
-  agent { docker { image 'python:3.7.2' } }
+  agent {
+    docker {
+        image 'python:3.7.2'
+        image 'qnib/pytest'
+    }
+  }
   stages {
     stage('build') {
       steps {
@@ -7,19 +12,14 @@ pipeline {
       }
     }
     stage('Test') {
-            agent {
-                docker {
-                    image 'qnib/pytest'
-                }
-            }
-            steps {
-                sh 'py.test --verbose --junit-xml test-reports/results.xml tests/test_catalog.py'
-            }
-            post {
-                always {
-                    junit 'test-reports/results.xml'
-                }
+        steps {
+            sh 'py.test --verbose --junit-xml test-reports/results.xml tests/test_catalog.py'
+        }
+        post {
+            always {
+                junit 'test-reports/results.xml'
             }
         }
+    }
   }
 }
