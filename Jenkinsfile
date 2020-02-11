@@ -6,10 +6,20 @@ pipeline {
         sh 'pip3 install -r requirements.txt'
       }
     }
-    stage('test') {
-      steps {
-        sh 'pytest tests/test_catalog.py'
-      }
-    }
+    stage('Test') {
+            agent {
+                docker {
+                    image 'qnib/pytest'
+                }
+            }
+            steps {
+                sh 'py.test --verbose --junit-xml test-reports/results.xml tests/test_catalog.py'
+            }
+            post {
+                always {
+                    junit 'test-reports/results.xml'
+                }
+            }
+        }
   }
 }
