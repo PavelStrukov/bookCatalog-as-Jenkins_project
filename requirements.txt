@@ -21,5 +21,5 @@ requests==2.22.0
 selenium==3.141.0
 six==1.14.0
 unittest-xml-reporting==3.0.1
-urllib3==1.25.8
+urllib3==1.26.5
 wcwidth==0.1.8
